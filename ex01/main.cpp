@@ -21,5 +21,14 @@ int main()
     std::cout << mille.shortestSpan() << std::endl;
     std::cout << mille.longestSpan() << std::endl;
 
+    std::vector<int> test;
+	test.push_back(15);
+    test.push_back(12);
+    test.push_back(14);
+    Span rrd(100);
+    rrd.generateAddNumber(test.begin(), test.end());
+    std::cout << rrd.shortestSpan() << std::endl;
+    std::cout << rrd.longestSpan() << std::endl;
+
     return 0;
 }

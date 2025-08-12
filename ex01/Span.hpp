@@ -19,11 +19,13 @@ class Span
 		void addNumber(int number);
 		int shortestSpan();
 		int longestSpan();
+		void generateAddNumber(std::vector<int>::iterator start, std::vector<int>::iterator end);
 	private:
 		unsigned int limit;
 		unsigned int filled;
 		std::vector<int> numbers;
 
+		
 };
 
 

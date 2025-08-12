@@ -62,14 +62,12 @@ void Span::addNumber(int number)
 }
 int Span::shortestSpan()
 {
-	//manage trhow in case there is a single element..
 	if(numbers.begin() == numbers.end() - 1)
 		throw std::exception();
 	std::sort(numbers.begin(), numbers.end());
 	std::vector<int>::iterator it = numbers.begin();
 	int span = *(numbers.end() - 1);
 	std::cout << "span is " << span << std::endl;
-	//possibilite d'utiliser un find_if
 	for( ; it+1 < numbers.end() - 1; it++)
 	{
 		if(*(it + 1) - *(it) < span)
@@ -90,6 +88,15 @@ int Span::longestSpan()
 	
 	return (*(numbers.end() - 1)  - *numbers.begin());
 }
+void Span::generateAddNumber(std::vector<int>::iterator start, std::vector<int>::iterator end)
+{
+	size_t elements =  end - start;
+	if (filled + elements > limit)
+		throw std::exception();
+	while (start < end)
+		addNumber(*start++);
+}
+
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
